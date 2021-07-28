@@ -1,5 +1,5 @@
+// ====== MENU ======
 // MENU SHOW AND HIDDEN
-
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close')
@@ -16,8 +16,7 @@ if(navClose){
     })
 }
 
-// REMOVE MENU MOBILE
-
+// HIDDEN MENU ON MOBILE
 const navlink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -25,3 +24,23 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navlink.forEach(n => n.addEventListener('click', linkAction))
+
+// ======SKILLS======
+// ACCORDION SKILLS
+const skillsContent = document.getElementsByName('skills__content'),
+      skillsHeder = document.querySelectorAll('.skills__header');
+
+function toggleSkills(){
+    let itemClass = this.parentNode.getElementsByClassName;
+
+    for (let i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = 'skills__content skills__close'
+    }
+
+    if(itemClass == 'skills__content skills__close'){
+        this.parentNode.className = 'skills__content skills__open'
+    }
+}
+skillsHeder.forEach((el)=>{
+    el.addEventListener('click', toggleSkills)
+})
