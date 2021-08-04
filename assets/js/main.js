@@ -95,7 +95,7 @@ modalCloses.forEach((modalClose)=>{
 
 // ======PORTAFOLIO======
 // swiper
-let swiper = new Swiper('.portfolio_container', {
+let swiperPortfolio = new Swiper('.portfolio_container', {
     cssMode: true,
     loop: true,
     navigation: {
@@ -106,4 +106,25 @@ let swiper = new Swiper('.portfolio_container', {
       el: '.swiper-pagination',
       clickable: true
     },
+});
+
+// ======TESTIMONIAL=======
+var swiperTestimonial = new Swiper('.testimonial__container', {
+    loop: true,
+    grabCursor:true,
+    spaceBetween: 48,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicsBullets: true
+    },
+    breakpoints:{
+        568:{
+            slidersPerView: 2,
+        }
+    }
 });
